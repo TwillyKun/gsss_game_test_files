@@ -6,5 +6,5 @@
  Objectives:
  Create Project [!];
  Basic Movement and Placeholder Sprites [!];
- Set Up Github [];
+ Set Up Github [!];
  Basic Combat and Placeholder Sprites [];
