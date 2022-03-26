@@ -7,4 +7,4 @@
  Create Project [!];
  Basic Movement and Placeholder Sprites [!];
  Set Up Github [!];
- Basic Combat and Placeholder Sprites [];
+ Basic Combat and Placeholder Sprites [i];
