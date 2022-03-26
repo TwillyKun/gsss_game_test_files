@@ -33,7 +33,11 @@
     <script>scripts\scr_dash_state.gml</script>
     <script>scripts\scr_frozen_state.gml</script>
     <script>scripts\scr_attack_state.gml</script>
+    <script>scripts\scr_main_menu.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_options</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_character_parent</object>
     <object>objects\obj_player</object>
@@ -45,8 +49,14 @@
     <object>objects\obj_view_static</object>
     <object>objects\obj_cbt_dash</object>
     <object>objects\obj_enemy_test</object>
+    <objects name="menus">
+      <object>objects\obj_main_menu</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <rooms name="menus">
+      <room>rooms\rom_main_menu</room>
+    </rooms>
     <room>rooms\combat_idea</room>
     <room>rooms\overworld_idea</room>
   </rooms>
