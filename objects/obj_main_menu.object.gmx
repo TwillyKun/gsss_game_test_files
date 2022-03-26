@@ -58,19 +58,17 @@ mpos = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//startStart of every frame, move is 0
+            <string>//Start of every frame, move is 0
 var move = 0;
 
 /*
- * max = takes biggest value out of given value
- * keyboard_check_pressed(vk_up) = comparator value 1
- * keyboard_check_pressed(ord("W")) = comparator value 2
- * 0 = comparator value 3
+ * move position
+ * allows use with W and S and up and down arrows
  */
 move -= max(keyboard_check_pressed(vk_up),keyboard_check_pressed(ord("W")),0);
 move += max(keyboard_check_pressed(vk_down),keyboard_check_pressed(ord("S")),0);
 
-
+//button is pressed
 if (move != 0){
     mpos += move;
     
