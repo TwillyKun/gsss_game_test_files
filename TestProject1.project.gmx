@@ -12,11 +12,16 @@
     <sprite>sprites\desert_2</sprite>
     <sprite>sprites\spr_cbt_left_test</sprite>
     <sprite>sprites\spr_cbt_right_test</sprite>
-    <sprite>sprites\spr_shadow</sprite>
     <sprite>sprites\spr_cbt_down_test</sprite>
     <sprite>sprites\spr_cbt_up_test</sprite>
-    <sprite>sprites\spr_walk_right</sprite>
-    <sprite>sprites\spr_walk_left</sprite>
+    <sprites name="Player Sprites">
+      <sprite>sprites\spr_walk_left</sprite>
+      <sprite>sprites\spr_walk_right</sprite>
+      <sprite>sprites\spr_attack_right</sprite>
+      <sprite>sprites\spr_attack_left</sprite>
+      <sprite>sprites\spr_shadow</sprite>
+    </sprites>
+    <sprite>sprites\spr_enemy_test</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_desert</background>
@@ -27,8 +32,10 @@
     <script>scripts\scr_move_state.gml</script>
     <script>scripts\scr_dash_state.gml</script>
     <script>scripts\scr_frozen_state.gml</script>
+    <script>scripts\scr_attack_state.gml</script>
   </scripts>
   <objects name="objects">
+    <object>objects\obj_character_parent</object>
     <object>objects\obj_player</object>
     <object>objects\obj_wall</object>
     <object>objects\object2</object>
@@ -37,6 +44,7 @@
     <object>objects\obj_view</object>
     <object>objects\obj_view_static</object>
     <object>objects\obj_cbt_dash</object>
+    <object>objects\obj_enemy_test</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\combat_idea</room>
