@@ -7,22 +7,30 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\desert_1</sprite>
-    <sprite>sprites\desert_2</sprite>
-    <sprite>sprites\spr_cbt_left_test</sprite>
-    <sprite>sprites\spr_cbt_right_test</sprite>
-    <sprite>sprites\spr_cbt_down_test</sprite>
-    <sprite>sprites\spr_cbt_up_test</sprite>
+    <sprites name="Map Tiles">
+      <sprite>sprites\desert_1</sprite>
+      <sprite>sprites\desert_2</sprite>
+      <sprite>sprites\spr_wall</sprite>
+    </sprites>
+    <sprites name="Test Sprites">
+      <sprite>sprites\spr_cbt_right_test</sprite>
+      <sprite>sprites\spr_cbt_down_test</sprite>
+      <sprite>sprites\spr_cbt_up_test</sprite>
+      <sprite>sprites\spr_cbt_left_test</sprite>
+    </sprites>
     <sprites name="Player Sprites">
       <sprite>sprites\spr_walk_left</sprite>
       <sprite>sprites\spr_walk_right</sprite>
       <sprite>sprites\spr_attack_right</sprite>
       <sprite>sprites\spr_attack_left</sprite>
+    </sprites>
+    <sprites name="Enemy Sprites">
+      <sprite>sprites\spr_enemy_test</sprite>
+    </sprites>
+    <sprites name="Shared Sprites">
+      <sprite>sprites\spr_damage</sprite>
       <sprite>sprites\spr_shadow</sprite>
     </sprites>
-    <sprite>sprites\spr_enemy_test</sprite>
-    <sprite>sprites\spr_damage</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_desert</background>

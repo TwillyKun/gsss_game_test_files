@@ -1,3 +1,5 @@
+///scr_main_menu
+//Basic menu, new game goes to next room in list, quit kills process, others just for show
 switch (mpos){
     case 0:
         room_goto_next();

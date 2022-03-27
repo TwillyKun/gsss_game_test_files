@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Menu items
+            <string>///Initialize main menu
+//Menu items
 main_menu[0] = "New Game";
 main_menu[1] = "Start";
 main_menu[2] = "Album";
@@ -61,7 +62,9 @@ mpos = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Start of every frame, move is 0
+            <string>///Basic controls for main menu
+//Note: Does not grab controls from get_input, remember to change this later
+//Start of every frame, move is 0
 var move = 0;
 
 /*
@@ -110,7 +113,9 @@ if (push == 1) scr_main_menu();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_left);
+            <string>///Draw menu elements
+//Change font here
+draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 draw_set_font(fnt_options);
 draw_set_color(c_white);

@@ -1,11 +1,15 @@
 ///scr_move_state
+//Call input script
 scr_get_input();
 
+//Set Dash State
 if (dash_key) {
     state = scr_dash_state;
+    //Dash distance is based on the room FPS divided by a number that can be changed here
     alarm[0] = room_speed/6;
 }
 
+//Set Attack State
 if (attack_key) {
     image_index = 0;
     state = scr_attack_state;

@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_damage</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Initialize damage object
 damage = 1;
-knockback = 5;
+knockback = 100;
 creator = noone;
 alarm[0] = 1;
 </string>
@@ -79,6 +79,14 @@ instance_destroy();
             <string>/// Damage all characters who did not create this object it touches
 if (other.id != creator) {
     other.hp -= damage;
+    
+    //Knockback calculations
+    var dir = point_direction(creator.x, creator.y, other.x, other.y);
+    var xforce = lengthdir_x(knockback, dir);
+    var yforce = lengthdir_y(knockback, dir);
+    with (other) {
+        physics_apply_impulse(x, y, xforce, yforce);
+    }
 }
 
 </string>
