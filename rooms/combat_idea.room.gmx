@@ -92,6 +92,7 @@
     <instance objName="obj_wall" x="192" y="256" name="inst_885CB184" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_test" x="544" y="320" name="inst_1708541E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_test" x="256" y="320" name="inst_38C2F006" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_open_game_menu" x="160" y="288" name="inst_040CA0CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

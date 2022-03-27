@@ -2,7 +2,7 @@
 //Basic menu, new game goes to next room in list, quit kills process, others just for show
 switch (mpos){
     case 0:
-        room_goto_next();
+        room_goto(combat_idea);
         break;
     case 1:
         break;

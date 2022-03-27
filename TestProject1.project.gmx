@@ -42,7 +42,11 @@
     <script>scripts\scr_dash_state.gml</script>
     <script>scripts\scr_frozen_state.gml</script>
     <script>scripts\scr_attack_state.gml</script>
-    <script>scripts\scr_main_menu.gml</script>
+    <scripts name="menus">
+      <script>scripts\scr_main_menu.gml</script>
+      <script>scripts\scr_game_menu.gml</script>
+      <script>scripts\scr_open_game_menu.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_options</font>
@@ -61,11 +65,14 @@
     <object>objects\obj_damage</object>
     <objects name="menus">
       <object>objects\obj_main_menu</object>
+      <object>objects\obj_game_menu</object>
+      <object>objects\obj_open_game_menu</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="menus">
       <room>rooms\rom_main_menu</room>
+      <room>rooms\rom_game_menu</room>
     </rooms>
     <room>rooms\combat_idea</room>
     <room>rooms\overworld_idea</room>
