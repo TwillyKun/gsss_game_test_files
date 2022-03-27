@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Create Event
 event_inherited();
+hp = 3;
 spd = 4;
 hspd = 0;
 vspd = 0;
@@ -34,6 +35,7 @@ len = 0;
 dir = 0;
 xaxis = 0;
 yaxis = 0;
+attacked = false;
 image_speed = 0;
 scr_get_input();
 state = scr_move_state;
@@ -111,6 +113,7 @@ script_execute(state);
             <string>/// Return to move state
 if (state == scr_attack_state) {
     state = scr_move_state;
+    attacked = false;
 }
 </string>
           </argument>

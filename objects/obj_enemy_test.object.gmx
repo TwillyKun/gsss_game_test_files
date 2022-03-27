@@ -53,9 +53,10 @@ spd = .25;
             <kind>1</kind>
             <string>/// Move to player
 event_inherited();
-phy_position_x += sign(obj_cbt.x - x)*spd;
-phy_position_y += sign(obj_cbt.y - y)*spd;
-
+if (instance_exists(obj_cbt)) {
+    phy_position_x += sign(obj_cbt.x - x)*spd;
+    phy_position_y += sign(obj_cbt.y - y)*spd;
+}
 </string>
           </argument>
         </arguments>
@@ -74,9 +75,9 @@ phy_position_y += sign(obj_cbt.y - y)*spd;
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>8,48</point>
-    <point>64,48</point>
-    <point>64,128</point>
-    <point>8,128</point>
+    <point>24,36</point>
+    <point>48,36</point>
+    <point>48,128</point>
+    <point>24,128</point>
   </PhysicsShapePoints>
 </object>

@@ -10,3 +10,9 @@ switch (sprite_index) {
         sprite_index = spr_attack_left;
         break;
 }
+
+if (image_index >= 2 and attacked == false) {
+    var damage = instance_create(x, y, obj_damage);
+    damage.creator = id;
+    attacked = true;
+}
