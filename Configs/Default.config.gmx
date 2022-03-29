@@ -677,5 +677,12 @@
     <option_xbone_texture_page>1024</option_xbone_texture_page>
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
-  <ConfigConstants/>
+  <ConfigConstants>
+    <constants number="4">
+      <constant name="RIGHTFACE">0</constant>
+      <constant name="UPFACE">1</constant>
+      <constant name="LEFTFACE">2</constant>
+      <constant name="DOWNFACE">3</constant>
+    </constants>
+  </ConfigConstants>
 </Config>

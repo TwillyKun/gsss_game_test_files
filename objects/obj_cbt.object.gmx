@@ -26,7 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>///Create Event
+//Inherite the create event from obj_character_parent
 event_inherited();
+
+/*
+hp = health of the character
+spd = the speed in which the character moves on the map
+hspd, vspd, len, dir, xaxis, yaxis, and image_speed are set and used within scr_move_state for calculations [DO NOT CHANGE THEIR VALUE HERE]
+attacked is a boolean for a check inside scr_attack_state to prevent more than 1 damage box from spawning within an attack
+
+After all variables are set, call scr_get_input, set the state that the character is currently in as scr_move_state, and by default set their facing position to right
+*/
 hp = 3;
 spd = 4;
 hspd = 0;
@@ -39,6 +49,7 @@ attacked = false;
 image_speed = 0;
 scr_get_input();
 state = scr_move_state;
+face = RIGHTFACE;
 </string>
           </argument>
         </arguments>
