@@ -59,14 +59,15 @@ mpos = 0;
             <string>///Basic controls for game menu
 //Note: Does not grab controls from get_input, remember to change this later
 //Start of every frame, move is 0
+scr_get_input();
 var move = 0;
 
 /*
  * move position
  * allows use with W and S and up and down arrows
  */
-move -= max(keyboard_check_pressed(vk_up),keyboard_check_pressed(ord("W")),0);
-move += max(keyboard_check_pressed(vk_down),keyboard_check_pressed(ord("S")),0);
+move -= max(keyboard_check_pressed(up),0);
+move += max(keyboard_check_pressed(down),0);
 
 //button is pressed
 if (move != 0){
@@ -78,7 +79,7 @@ if (move != 0){
 }
 
 var push;
-push = max(keyboard_check_released(vk_enter), keyboard_check_released(vk_shift), keyboard_check_released(vk_space), 0);
+push = max(keyboard_check_released(button1), keyboard_check_released(button2), keyboard_check_released(vk_space), 0);
 
 if (push == 1) scr_game_menu();
 

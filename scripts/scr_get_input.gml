@@ -1,13 +1,23 @@
 ///scr_get_input
 //Keyboard Controls
-right_key = keyboard_check(vk_right);
-left_key = keyboard_check(vk_left);
-up_key = keyboard_check(vk_up);
-down_key = keyboard_check(vk_down);
-dash_key = keyboard_check_pressed(ord('C'));
-attack_key = keyboard_check_pressed(ord('X'));
+right = vk_right;
+left = vk_left;
+up = vk_up;
+down = vk_down;
+button1 = ord('C');
+button2 = ord('X');
+button3 = ord('Z');
+start = vk_escape;
 
-// Get the axis for movement
+//Player Controls
+right_key = keyboard_check(right);
+left_key = keyboard_check(left);
+up_key = keyboard_check(up);
+down_key = keyboard_check(down);
+dash_key = keyboard_check_pressed(button1);
+attack_key = keyboard_check_pressed(button2);
+
+// Get the axis for player movement
 xaxis = (right_key - left_key);
 yaxis = (down_key - up_key);
 
