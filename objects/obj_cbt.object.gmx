@@ -96,9 +96,62 @@ state = scr_move_state;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Movement Events
-event_inherited();
+            <string>///Step Events
+
+//Modify the depth of the object
+depth = -y;
+
+//Execute which ever state that is currently selected
 script_execute(state);
+
+//Death Check
+if (obj_cbt_stats.hp &lt;= 0) {
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_expr">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Collect exp
+//NOTE: spr_expr and obj_expr is named this since exp is a function within game maker
+
+//Destroy obj_expr when collided with
+with (other) {
+    instance_destroy();
+}
+
+//Modify the variables within the obj_cbt_stats on collision
+with (obj_cbt_stats) {
+    expr += 1;
+    if (expr &gt;= maxexpr) {
+        level += 1;
+        expr = expr - maxexpr;
+        maxexpr *= 2;
+        hp += 2;
+        maxhp += 2;
+        stamina += 2;
+        maxstamina += 2;
+        attack += 1;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -121,7 +174,7 @@ script_execute(state);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Return to move state
+            <string>/// Return to move state at the end of an animation
 if (state == scr_attack_state) {
     state = scr_move_state;
     attacked = false;

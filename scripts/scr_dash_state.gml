@@ -1,4 +1,9 @@
 ///scr_move_state
+
+//Calculate which direction the player is facing
+if (len == 0) {
+    dir = face*90;
+}
 len = spd*4;
 
 // Get speed

@@ -32,8 +32,10 @@ if (image_index >= 2 and attacked == false) {
             break;
         }
     
-    //Create the damage box, set the character who created as creator so that they also won't get hurt, and set attacked to True so that no more than 1 hit box will be created per attack
+    /*Create the damage box, set the character who created as creator so that they also won't get hurt, 
+    damage everything within the hitbox based on damage stat, and set attacked to True so that no more than 1 hit box will be created per attack*/
     var damage = instance_create(xx, yy, obj_damage);
     damage.creator = id;
+    damage.damage = obj_cbt_stats.attack;
     attacked = true;
 }

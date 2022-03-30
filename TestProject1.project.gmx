@@ -31,6 +31,7 @@
       <sprite>sprites\spr_damage</sprite>
       <sprite>sprites\spr_shadow</sprite>
     </sprites>
+    <sprite>sprites\spr_expr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_desert</background>
@@ -67,30 +68,42 @@
     <font>fonts\fnt_options</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_character_parent</object>
-    <object>objects\obj_player</object>
+    <objects name="Overworld">
+      <object>objects\obj_player</object>
+    </objects>
     <object>objects\obj_wall</object>
     <object>objects\object2</object>
     <object>objects\object3</object>
-    <object>objects\obj_cbt</object>
-    <object>objects\obj_view</object>
-    <object>objects\obj_view_static</object>
-    <object>objects\obj_cbt_dash</object>
-    <object>objects\obj_enemy_test</object>
-    <object>objects\obj_damage</object>
+    <objects name="Combat">
+      <objects name="CBT">
+        <object>objects\obj_cbt</object>
+        <object>objects\obj_cbt_stats</object>
+        <object>objects\obj_cbt_dash</object>
+      </objects>
+      <objects name="Enemy">
+        <object>objects\obj_enemy_test</object>
+      </objects>
+      <object>objects\obj_damage</object>
+      <object>objects\obj_character_parent</object>
+    </objects>
+    <objects name="Camera">
+      <object>objects\obj_view</object>
+      <object>objects\obj_view_static</object>
+    </objects>
     <objects name="menus">
       <object>objects\obj_main_menu</object>
       <object>objects\obj_game_menu</object>
       <object>objects\obj_open_game_menu</object>
     </objects>
+    <object>objects\obj_expr</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\combat_idea</room>
+    <room>rooms\overworld_idea</room>
     <rooms name="menus">
       <room>rooms\rom_main_menu</room>
       <room>rooms\rom_game_menu</room>
     </rooms>
-    <room>rooms\combat_idea</room>
-    <room>rooms\overworld_idea</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
