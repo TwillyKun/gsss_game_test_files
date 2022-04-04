@@ -11,6 +11,10 @@
       <sprite>sprites\desert_1</sprite>
       <sprite>sprites\desert_2</sprite>
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_road</sprite>
+      <sprite>sprites\spr_road_edge</sprite>
+      <sprite>sprites\spr_doorway</sprite>
+      <sprite>sprites\spr_road_middle</sprite>
     </sprites>
     <sprites name="Test Sprites">
       <sprite>sprites\spr_cbt_right_test</sprite>
@@ -35,6 +39,8 @@
   </sprites>
   <backgrounds name="background">
     <background>background\background_desert</background>
+    <background>background\background_sky</background>
+    <background>background\background_shack</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -52,6 +58,7 @@
       <script>scripts\scr_enemy_chase_state.gml</script>
       <script>scripts\scr_enemy_wander_state.gml</script>
       <script>scripts\scr_enemy_idle_state.gml</script>
+      <script>scripts\scr_enemy_move_state.gml</script>
       <script>scripts\scr_enemy_stale_state.gml</script>
       <scripts name="Enemy Helpers">
         <script>scripts\scr_enemy_choose_next_state.gml</script>
@@ -71,9 +78,15 @@
     <objects name="Overworld">
       <object>objects\obj_player</object>
     </objects>
-    <object>objects\obj_wall</object>
-    <object>objects\object2</object>
-    <object>objects\object3</object>
+    <objects name="Test Objects">
+      <object>objects\obj_sand_edge</object>
+      <object>objects\obj_door</object>
+      <object>objects\obj_sand</object>
+      <object>objects\obj_road</object>
+      <object>objects\obj_road_edge</object>
+      <object>objects\obj_road_middle</object>
+      <object>objects\obj_wall</object>
+    </objects>
     <objects name="Combat">
       <objects name="CBT">
         <object>objects\obj_cbt</object>
@@ -99,11 +112,12 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\combat_idea</room>
-    <room>rooms\overworld_idea</room>
+    <room>rooms\town_idea</room>
     <rooms name="menus">
       <room>rooms\rom_main_menu</room>
       <room>rooms\rom_game_menu</room>
     </rooms>
+    <room>rooms\overworld_idea</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

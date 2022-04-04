@@ -3,10 +3,12 @@
 scr_get_input();
 
 //Set state to Dash state
-if (dash_key) {
+if (dash_key and obj_cbt_stats.stamina >= DASH_COST) {
     state = scr_dash_state;
     //Dash distance is based on the room FPS divided by a number that can be changed here
     alarm[0] = room_speed/6;
+    obj_cbt_stats.stamina -= DASH_COST;
+    obj_cbt_stats.alarm[0] = room_speed;
 }
 
 //Set state to Attack State
