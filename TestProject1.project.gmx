@@ -41,6 +41,7 @@
     <background>background\background_desert</background>
     <background>background\background_sky</background>
     <background>background\background_shack</background>
+    <background>background\tileset_test</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -79,12 +80,7 @@
       <object>objects\obj_player</object>
     </objects>
     <objects name="Test Objects">
-      <object>objects\obj_sand_edge</object>
       <object>objects\obj_door</object>
-      <object>objects\obj_sand</object>
-      <object>objects\obj_road</object>
-      <object>objects\obj_road_edge</object>
-      <object>objects\obj_road_middle</object>
       <object>objects\obj_wall</object>
     </objects>
     <objects name="Combat">

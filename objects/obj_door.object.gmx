@@ -38,7 +38,7 @@ new_room = noone;
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>-1</PhysicsObjectSensor>
   <PhysicsObjectShape>1</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
+  <PhysicsObjectDensity>0</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
@@ -49,7 +49,7 @@ new_room = noone;
   <PhysicsShapePoints>
     <point>16,16</point>
     <point>64,16</point>
-    <point>64,80</point>
-    <point>16,80</point>
+    <point>64,128</point>
+    <point>16,128</point>
   </PhysicsShapePoints>
 </object>
