@@ -68,6 +68,10 @@ targety = 0;
             <kind>1</kind>
             <string>/// Drop on death
 instance_create(x, y, obj_expr);
+
+if (scr_chance(.5)) {
+    instance_create(x+irandom_range(-10, 10), y+random_range(-4, 4), obj_health);
+}
 </string>
           </argument>
         </arguments>

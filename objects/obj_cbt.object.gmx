@@ -113,6 +113,39 @@ if (obj_cbt_stats.hp &lt;= 0) {
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_health">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Collect health
+
+//Destroy obj_expr when collided with
+with (other) {
+    instance_destroy();
+}
+
+//Modify the variables within the obj_cbt_stats on collision
+with (obj_cbt_stats) {
+    hp = min(hp+2, maxhp);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_expr">
       <action>
         <libid>1</libid>
@@ -175,7 +208,9 @@ with (obj_cbt_stats) {
           <argument>
             <kind>1</kind>
             <string>/// Enter door
+//Check if the room the door goes to exists
 if (room_exists(other.new_room)) {
+    //Go to the room and set x and y position in that room
     room_goto(other.new_room)
     x = other.new_x;
     y = other.new_y;

@@ -35,7 +35,12 @@
       <sprite>sprites\spr_damage</sprite>
       <sprite>sprites\spr_shadow</sprite>
     </sprites>
-    <sprite>sprites\spr_expr</sprite>
+    <sprites name="Item Sprites">
+      <sprite>sprites\spr_health</sprite>
+      <sprite>sprites\spr_expr</sprite>
+    </sprites>
+    <sprite>sprites\spr_sign</sprite>
+    <sprite>sprites\spr_dialog_box</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_desert</background>
@@ -48,6 +53,8 @@
     <scripts name="Controls and Calculations">
       <script>scripts\scr_get_input.gml</script>
       <script>scripts\scr_get_face.gml</script>
+      <script>scripts\scr_chance.gml</script>
+      <script>scripts\scr_string_copy_words.gml</script>
     </scripts>
     <scripts name="Player States">
       <script>scripts\scr_move_state.gml</script>
@@ -92,6 +99,10 @@
       <objects name="Enemy">
         <object>objects\obj_enemy_test</object>
       </objects>
+      <objects name="Items">
+        <object>objects\obj_expr</object>
+        <object>objects\obj_health</object>
+      </objects>
       <object>objects\obj_damage</object>
       <object>objects\obj_character_parent</object>
     </objects>
@@ -104,16 +115,18 @@
       <object>objects\obj_game_menu</object>
       <object>objects\obj_open_game_menu</object>
     </objects>
-    <object>objects\obj_expr</object>
+    <object>objects\obj_dialog</object>
+    <object>objects\obj_sign</object>
+    <object>objects\obj_speaker</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\combat_idea</room>
     <room>rooms\town_idea</room>
+    <room>rooms\overworld_idea</room>
     <rooms name="menus">
       <room>rooms\rom_main_menu</room>
       <room>rooms\rom_game_menu</room>
     </rooms>
-    <room>rooms\overworld_idea</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

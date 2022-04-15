@@ -3,12 +3,35 @@
 scr_get_input();
 
 //Set state to Dash state
-if (dash_key and obj_cbt_stats.stamina >= DASH_COST) {
-    state = scr_dash_state;
-    //Dash distance is based on the room FPS divided by a number that can be changed here
-    alarm[0] = room_speed/6;
-    obj_cbt_stats.stamina -= DASH_COST;
-    obj_cbt_stats.alarm[0] = room_speed;
+if (dash_key) {
+    var xdir = lengthdir_x(8, face*90);
+    var ydir = lengthdir_y(8, face*90);
+    var speaker = instance_place(x+xdir, y+ydir, obj_speaker);
+    if (speaker != noone) {
+        //Talk
+        with (speaker) {
+            if (!instance_exists(dialog)) {
+                dialog = instance_create(x+xoffset, y+yoffset, obj_dialog);
+                dialog.text = text;
+            } else {
+             dialog.text_page++;
+             dialog.text_count = 0;
+             if (dialog.text_page > array_length_1d(dialog.text) - 1){
+                    with (dialog) {
+                        instance_destroy();
+                    }
+                }
+            }
+        }
+    
+    } else if (obj_cbt_stats.stamina >= DASH_COST) {
+        //Dash
+        state = scr_dash_state;
+        //Dash distance is based on the room FPS divided by a number that can be changed here
+        alarm[0] = room_speed/6;
+        obj_cbt_stats.stamina -= DASH_COST;
+        obj_cbt_stats.alarm[0] = room_speed;
+    }
 }
 
 //Set state to Attack State
