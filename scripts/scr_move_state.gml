@@ -1,9 +1,7 @@
 ///scr_move_state
-//Call input script
-scr_get_input();
 
 //Set state to Dash state
-if (dash_key) {
+if (obj_input.dash_key) {
     var xdir = lengthdir_x(8, face*90);
     var ydir = lengthdir_y(8, face*90);
     var speaker = instance_place(x+xdir, y+ydir, obj_speaker);
@@ -35,17 +33,17 @@ if (dash_key) {
 }
 
 //Set state to Attack State
-if (attack_key) {
+if (obj_input.attack_key) {
     image_index = 0;
     state = scr_attack_state;
 }
 
 // Get direction
-dir = point_direction(0, 0, xaxis, yaxis);
+dir = point_direction(0, 0, obj_input.xaxis, obj_input.yaxis);
 
 // Get length
 //If character is not moving, set length to 0
-if (xaxis == 0 and yaxis == 0) {
+if (obj_input.xaxis == 0 and obj_input.yaxis == 0) {
     len = 0;
 //If character is moving, set length to character's speed, call scr_get_face
 } else {

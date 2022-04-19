@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>//Set current room to global variable "prev_room"
 
+/*
 global.prev_room=room;
 scr_open_game_menu();
 </string>

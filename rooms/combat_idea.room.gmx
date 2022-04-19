@@ -7,7 +7,7 @@
   <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code></code>
@@ -52,12 +52,12 @@
   </views>
   <instances>
     <instance objName="obj_cbt" x="32" y="288" name="inst_54D7BA95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_open_game_menu" x="0" y="0" name="inst_040CA0CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="544" y="224" name="inst_DBCE8A89" locked="0" code="new_room = town_idea;&#xA;new_x = 320;&#xA;new_y = 512;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="544" y="224" name="inst_DBCE8A89" locked="0" code="new_room = town_idea;&#xA;new_x = 320;&#xA;new_y = 512;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cbt_stats" x="32" y="0" name="inst_6DB12767" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_test" x="224" y="288" name="inst_BB5DA778" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_test" x="352" y="288" name="inst_03634479" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="352" name="inst_D02AD247" locked="0" code="" scaleX="10" scaleY="1.01587307453156" colour="4294967295" rotation="0"/>
+    <instance objName="obj_input" x="64" y="0" name="inst_34AA8473" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileset_test" x="0" y="384" w="32" h="32" xo="32" yo="96" id="10000001" name="inst_631CFC87" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
