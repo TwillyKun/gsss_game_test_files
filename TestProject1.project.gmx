@@ -78,6 +78,8 @@
       <script>scripts\scr_game_menu.gml</script>
       <script>scripts\scr_open_game_menu.gml</script>
     </scripts>
+    <script>scripts\scr_save_game.gml</script>
+    <script>scripts\scr_load_game.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_options</font>

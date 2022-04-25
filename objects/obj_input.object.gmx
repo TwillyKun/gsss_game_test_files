@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Initialize input object
 scr_get_input();
-last_room = room;
+
 </string>
           </argument>
         </arguments>
@@ -53,18 +53,6 @@ last_room = room;
             <string>/// Get the input
 scr_get_input();
 
-// Pause game
-if (pause_key) {
-    if (room != rm_pause) {
-        if (instance_exists(obj_cbt)) {
-            obj_cbt.persistent = false;
-        }
-        last_room = room;
-        room_goto(rm_pause);
-    } else {
-        room_goto(last_room);
-    }
-}
 </string>
           </argument>
         </arguments>

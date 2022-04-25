@@ -81,7 +81,9 @@ menu_index = 0;
           <argument>
             <kind>1</kind>
             <string>/// Control Menu
+//Confirm = Dash Key
 
+//Alarm prevents rapidly switching between the index by holding a direction
 if (alarm[0] &lt;= 0) {
     if (obj_input.down_key) {
         if (menu_index &lt; array_length_1d(option)-1) {
@@ -99,6 +101,30 @@ if (alarm[0] &lt;= 0) {
             menu_index = array_length_1d(option)-1;
         }
         alarm[0] = room_speed/6;
+    }
+    
+    if (obj_input.dash_key) {
+        switch (menu_index){
+            case 0:
+                obj_cbt_stats.room_start_action = RETURN;
+                room_goto(obj_cbt_stats.last_room);
+                break;
+                
+            case 1:
+                scr_save_game();
+                break;
+            case 2:
+                obj_cbt_stats.room_start_action = LOAD;
+                room_goto(obj_cbt_stats.last_room);
+                break;
+            case 3:
+                game_end();
+                break;
+                
+            default:
+                break;
+        }
+        obj_input.dash_key = false;
     }
 }
 </string>

@@ -35,6 +35,21 @@ expr = 0;
 maxexpr = 2;
 level = 1;
 attack = 1;
+
+//Get the x and y start positions
+if (instance_exists(obj_cbt)) {
+    cbt_xstart = obj_cbt.x;
+    cbt_ystart = obj_cbt.y;
+} else {
+    cbt_xstart = 0;
+    cbt_ystart = 0;
+}
+
+//Save the last room the player was in
+last_room = room;
+
+room_start_action = NEW_ROOM;
+
 </string>
           </argument>
         </arguments>
@@ -90,6 +105,68 @@ if (hp &lt; 0) {
 if (stamina &lt; maxstamina and alarm[0] == -1) {
     stamina++;
 }
+
+
+// Pause game
+if (obj_input.pause_key) {
+    if (room != rm_pause) {
+        if (instance_exists(obj_cbt)) {
+            obj_cbt.persistent = false;
+        }
+        last_room = room;
+        room_persistent = true;
+        room_goto(rm_pause);
+    } else {
+        room_goto(last_room);
+    }
+    obj_input.pause_key = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Player start position
+if (room == rm_pause) {
+    exit;
+}
+
+switch (room_start_action) {
+    case RETURN:
+        break;
+    
+    case NEW_ROOM:
+    default:
+        if (instance_exists(obj_cbt)) {
+            player_xstart = obj_cbt.x;
+            player_ystart = obj_cbt.y;
+        }
+        break;
+    case LOAD:
+        scr_load_game();
+        break;
+
+}
+
+room_persistent = false;
+room_start_action = NEW_ROOM;
 </string>
           </argument>
         </arguments>
