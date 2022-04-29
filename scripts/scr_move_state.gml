@@ -38,6 +38,17 @@ if (obj_input.attack_key) {
     state = scr_attack_state;
 }
 
+//Set state to Fire State
+if (obj_input.fire_key) {
+    var p = instance_create(x, y, obj_projectile);
+    var xforce = lengthdir_x(200, face*90);
+    var yforce = lengthdir_y(200, face*90);
+    p.creator = id;
+    with (p) {
+        physics_apply_impulse(x, y, xforce, yforce);
+    }
+}
+
 // Get direction
 dir = point_direction(0, 0, obj_input.xaxis, obj_input.yaxis);
 

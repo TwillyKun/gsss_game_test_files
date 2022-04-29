@@ -17,6 +17,7 @@ down_key = keyboard_check(down);
 dash_key = keyboard_check_pressed(button1);
 attack_key = keyboard_check_pressed(button2);
 pause_key = keyboard_check_pressed(start);
+fire_key = keyboard_check_pressed(button3);
 
 // Get the axis for player movement
 xaxis = (right_key - left_key);
@@ -32,4 +33,5 @@ if (gamepad_is_connected(0)) {
     dash_key = gamepad_button_check_pressed(0, gp_face1);
     attack_key = gamepad_button_check_pressed(0, gp_face3);
     pause_key = gamepad_button_check_pressed(0, gp_start);
+    fire_key = gamepad_button_check_pressed(0, gp_face4);
 }

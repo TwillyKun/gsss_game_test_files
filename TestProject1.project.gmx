@@ -122,6 +122,7 @@
     <object>objects\obj_speaker</object>
     <object>objects\obj_input</object>
     <object>objects\obj_pause_menu</object>
+    <object>objects\obj_projectile</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\combat_idea</room>
