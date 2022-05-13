@@ -34,6 +34,7 @@ hp = health of the character
 spd = the speed in which the character moves on the map
 hspd, vspd, len, dir, xaxis, yaxis, and image_speed are set and used within scr_move_state for calculations [DO NOT CHANGE THEIR VALUE HERE]
 attacked is a boolean for a check inside scr_attack_state to prevent more than 1 damage box from spawning within an attack
+sprint is a boolean to modify spd and the sprite to be used within scr_move_state
 
 After all variables are set, call scr_get_input, set the state that the character is currently in as scr_move_state, and by default set their facing position to right
 */
@@ -45,6 +46,7 @@ len = 0;
 dir = 0;
 xaxis = 0;
 yaxis = 0;
+sprint = false;
 attacked = false;
 image_speed = 0;
 state = scr_move_state;

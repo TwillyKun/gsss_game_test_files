@@ -49,16 +49,30 @@ if (obj_input.fire_key) {
     }
 }
 
+//Set state to Sprint State (Toggle)
+if (obj_input.sprint_key) {
+    if (sprint == true) {
+        sprint = false;
+    } else {
+        sprint = true;
+    }
+}
+
 // Get direction
 dir = point_direction(0, 0, obj_input.xaxis, obj_input.yaxis);
 
 // Get length
-//If character is not moving, set length to 0
+//If character is not moving, set length to 0 and prevent sprinting
 if (obj_input.xaxis == 0 and obj_input.yaxis == 0) {
     len = 0;
-//If character is moving, set length to character's speed, call scr_get_face
+    sprint = false;
+//If character is moving, set length to character's speed based on state, then call scr_get_face
 } else {
-    len = spd;
+    if (sprint == false) {
+        len = spd;
+    } else {
+        len = spd*2;
+    }
     scr_get_face();
 }
 
@@ -72,23 +86,45 @@ phy_position_y += vspd;
 
 // Sprite Adjustment
 image_speed = .5;
+
 //If not moving, set sprite index to 0
 //Change this later to: Set sprite index to spr_cbt_idle, image_index = 0 when the Idle animation is finally made
-if (len == 0) image_index = 0;
+if (len == 0) {
+    image_index = 0;
+}
 
 //When scr_get_face is called, face will be set to a number between 0 and 3
 //See MACROS under 'Default'
-switch (face) {
-    case RIGHTFACE:
-        sprite_index = spr_walk_right;
-        break;
-    case LEFTFACE:
-        sprite_index = spr_walk_left;
-        break;
-    case UPFACE:
-        sprite_index = spr_cbt_up_test;
-        break;
-    case DOWNFACE:
-        sprite_index = spr_cbt_down_test;
-        break;
+//Sprite control for walking
+if (sprint == false) {
+    switch (face) {
+        case RIGHTFACE:
+            sprite_index = spr_walk_right;
+            break;
+        case LEFTFACE:
+            sprite_index = spr_walk_left;
+            break;
+        case UPFACE:
+            sprite_index = spr_cbt_up_test;
+            break;
+        case DOWNFACE:
+            sprite_index = spr_cbt_down_test;
+            break;
+    }
+//Sprite control for sprinting    
+} else {
+    switch (face) {
+        case RIGHTFACE:
+            sprite_index = spr_run_right;
+            break;
+        case LEFTFACE:
+            sprite_index = spr_run_left;
+            break;
+        case UPFACE:
+            sprite_index = spr_cbt_up_test;
+            break;
+        case DOWNFACE:
+            sprite_index = spr_cbt_down_test;
+            break;
+    }
 }

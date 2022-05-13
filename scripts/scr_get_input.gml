@@ -7,6 +7,7 @@ down = vk_down;
 button1 = ord('C');
 button2 = ord('X');
 button3 = ord('Z');
+button4 = ord('V');
 start = vk_escape;
 
 //Player Controls
@@ -18,6 +19,7 @@ dash_key = keyboard_check_pressed(button1);
 attack_key = keyboard_check_pressed(button2);
 pause_key = keyboard_check_pressed(start);
 fire_key = keyboard_check_pressed(button3);
+sprint_key = keyboard_check_pressed(button4);
 
 // Get the axis for player movement
 xaxis = (right_key - left_key);

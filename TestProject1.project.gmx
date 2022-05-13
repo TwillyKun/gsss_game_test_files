@@ -27,6 +27,9 @@
       <sprite>sprites\spr_walk_right</sprite>
       <sprite>sprites\spr_attack_right</sprite>
       <sprite>sprites\spr_attack_left</sprite>
+      <sprite>sprites\spr_run_right</sprite>
+      <sprite>sprites\spr_run_left</sprite>
+      <sprite>sprites\spr_jump</sprite>
     </sprites>
     <sprites name="Enemy Sprites">
       <sprite>sprites\spr_enemy_test</sprite>
