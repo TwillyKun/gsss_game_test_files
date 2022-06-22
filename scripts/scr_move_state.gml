@@ -56,6 +56,32 @@ if (obj_input.sprint_key) {
     } else {
         sprint = true;
     }
+} else {
+
+}
+
+//Press up to interact
+if (obj_input.up_key) {
+    var xdir = lengthdir_x(8, face*90);
+    var ydir = lengthdir_y(8, face*90);
+    var speaker = instance_place(x+xdir, y+ydir, obj_speaker);
+    if (speaker != noone) {
+        //Talk
+        with (speaker) {
+            if (!instance_exists(dialog)) {
+                dialog = instance_create(x+xoffset, y+yoffset, obj_dialog);
+                dialog.text = text;
+            } else {
+             dialog.text_page++;
+             dialog.text_count = 0;
+             if (dialog.text_page > array_length_1d(dialog.text) - 1){
+                    with (dialog) {
+                        instance_destroy();
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Get direction
@@ -82,34 +108,44 @@ vspd = lengthdir_y(len, dir);
 
 // Move the character's position on the map
 phy_position_x += hspd;
+
+/* Old code for moving character up and down
 phy_position_y += vspd;
+*/
 
 // Sprite Adjustment
 image_speed = .5;
-
-//If not moving, set sprite index to 0
-//Change this later to: Set sprite index to spr_cbt_idle, image_index = 0 when the Idle animation is finally made
-if (len == 0) {
-    image_index = 0;
-}
 
 //When scr_get_face is called, face will be set to a number between 0 and 3
 //See MACROS under 'Default'
 //Sprite control for walking
 if (sprint == false) {
-    switch (face) {
-        case RIGHTFACE:
-            sprite_index = spr_walk_right;
-            break;
-        case LEFTFACE:
-            sprite_index = spr_walk_left;
-            break;
-        case UPFACE:
-            sprite_index = spr_cbt_up_test;
-            break;
-        case DOWNFACE:
-            sprite_index = spr_cbt_down_test;
-            break;
+    if (len != 0){
+        switch (face) {
+            case RIGHTFACE:
+                sprite_index = spr_walk_right_fixed;
+                break;
+            case LEFTFACE:
+                sprite_index = spr_walk_left_fixed;
+                break;
+            case UPFACE:
+                sprite_index = spr_cbt_up_test;
+                break;
+            case DOWNFACE:
+                sprite_index = spr_cbt_down_test;
+                break;
+        }
+    //Sprite control for idle
+    } else if (len == 0) {
+        image_index = 0;
+        switch (face) {
+            case RIGHTFACE:
+                sprite_index = spr_idle_right;
+                break;
+            case LEFTFACE:
+                sprite_index = spr_idle_left;
+                break;
+        }
     }
 //Sprite control for sprinting    
 } else {

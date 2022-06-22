@@ -292,7 +292,7 @@ persistent = true;
             <kind>1</kind>
             <string>///Draw Shadow
 
-draw_sprite(spr_shadow, image_index, x, y);
+draw_sprite(spr_shadow, image_index, x, y+10);
 draw_self();
 
 </string>
