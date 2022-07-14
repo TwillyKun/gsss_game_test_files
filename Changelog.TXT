@@ -1,0 +1,20 @@
+7/14/2022
+Changes:
+Reworked how the game determines which sprite to use. It is now handled in the following method
+1. An two dimensional array is created within the creation event of the object that houses all sprite for that object that uses two new created constants - MOVE and ATTACK
+2. When a script is called for a state, set the movement variable to the constant of the current state
+This setup is easier to modify and uses little code compared to the old method
+
+The attack hitbox now works with FACE
+Removed all redundant code involving sprite handling (80+ lines)
+Created Changelog.txt to have a written history of changes to the project
+
+Known Bugs:
+Currently does not work with SPRINT but the double movement speed is still togglable, add a new constant called SPRINT for sprite handling and set it up under scr_move_state
+There is still no timer for interacting with the sign in the second room
+
+To Do:
+Create a spread sheet within file directory to house quick notes on every important variable and where they are located (Just now realizing my computer doesn't have any spreadsheet programs installed... maybe just use a google spreadsheet doc)
+Create a new enemy and fix the scripting for enemies to handling different enemy types
+Have the player press up to enter doorways instead of collision
+Have a sprite appear above the player character for interactables

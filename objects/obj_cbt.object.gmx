@@ -51,6 +51,16 @@ attacked = false;
 image_speed = 0;
 state = scr_move_state;
 face = RIGHTFACE;
+movement = MOVE;
+
+//Sprite array
+sprite[RIGHTFACE, MOVE] = spr_walk_right_fixed;
+sprite[UPFACE, MOVE] = spr_cbt_up_test;
+sprite[LEFTFACE, MOVE] = spr_walk_left_fixed;
+sprite[DOWNFACE, MOVE] = spr_cbt_down_test;
+
+sprite[RIGHTFACE, ATTACK] = spr_jab_right;
+sprite[LEFTFACE, ATTACK] = spr_jab_left;
 </string>
           </argument>
         </arguments>
@@ -104,6 +114,8 @@ depth = -y;
 
 //Execute which ever state that is currently selected
 script_execute(state);
+
+sprite_index = sprite[face, movement];
 
 //Death Check
 if (obj_cbt_stats.hp &lt;= 0) {

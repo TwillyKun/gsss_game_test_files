@@ -1,26 +1,7 @@
 ///scr_attack_state
 //Change image speed of the attack animation here
 image_speed = .5;
-
-//Check the direction the player was heading towards and choose the correct attack sprite
-//NOTE: This code is outdated, rewrite this to use 'face' instead
-switch (sprite_index) {
-    case spr_walk_right_fixed:
-        sprite_index = spr_jab_right;
-        break;
-        
-    case spr_walk_left_fixed:
-        sprite_index = spr_jab_left;
-        break;
-    
-    case spr_idle_right:
-        sprite_index = spr_jab_right;
-        break;
-        
-    case spr_idle_left:
-        sprite_index = spr_jab_left;
-        break;
-}
+movement = ATTACK;
 
 //On frame 2 or more and the attack hasn't already gone through
 if (image_index >= 2 and attacked == false) {
@@ -29,13 +10,13 @@ if (image_index >= 2 and attacked == false) {
     var yy = 0;
     
     //Change positioning of the damage box here
-    switch (sprite_index) {
-        case spr_jab_right:
+    switch (face) {
+        case RIGHTFACE:
             xx = x+30;
             yy = y-10;
             break;
             
-        case spr_jab_left:
+        case LEFTFACE:
             xx = x-30;
             yy = y-10;
             break;

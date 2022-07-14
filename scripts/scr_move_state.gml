@@ -1,4 +1,5 @@
 ///scr_move_state
+movement = MOVE;
 
 //Set state to Dash state
 if (obj_input.dash_key) {
@@ -115,52 +116,4 @@ phy_position_y += vspd;
 
 // Sprite Adjustment
 image_speed = .5;
-
-//When scr_get_face is called, face will be set to a number between 0 and 3
-//See MACROS under 'Default'
-//Sprite control for walking
-if (sprint == false) {
-    if (len != 0){
-        switch (face) {
-            case RIGHTFACE:
-                sprite_index = spr_walk_right_fixed;
-                break;
-            case LEFTFACE:
-                sprite_index = spr_walk_left_fixed;
-                break;
-            case UPFACE:
-                sprite_index = spr_cbt_up_test;
-                break;
-            case DOWNFACE:
-                sprite_index = spr_cbt_down_test;
-                break;
-        }
-    //Sprite control for idle
-    } else if (len == 0) {
-        image_index = 0;
-        switch (face) {
-            case RIGHTFACE:
-                sprite_index = spr_idle_right;
-                break;
-            case LEFTFACE:
-                sprite_index = spr_idle_left;
-                break;
-        }
-    }
-//Sprite control for sprinting    
-} else {
-    switch (face) {
-        case RIGHTFACE:
-            sprite_index = spr_run_right;
-            break;
-        case LEFTFACE:
-            sprite_index = spr_run_left;
-            break;
-        case UPFACE:
-            sprite_index = spr_cbt_up_test;
-            break;
-        case DOWNFACE:
-            sprite_index = spr_cbt_down_test;
-            break;
-    }
-}
+if (len == 0) image_index = 0;

@@ -678,7 +678,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="8">
+    <constants number="10">
       <constant name="RIGHTFACE">0</constant>
       <constant name="UPFACE">1</constant>
       <constant name="LEFTFACE">2</constant>
@@ -687,6 +687,8 @@
       <constant name="RETURN">0</constant>
       <constant name="NEW_ROOM">1</constant>
       <constant name="LOAD">2</constant>
+      <constant name="MOVE">0</constant>
+      <constant name="ATTACK">1</constant>
     </constants>
   </ConfigConstants>
 </Config>
