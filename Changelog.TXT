@@ -18,3 +18,24 @@ Create a spread sheet within file directory to house quick notes on every import
 Create a new enemy and fix the scripting for enemies to handling different enemy types
 Have the player press up to enter doorways instead of collision
 Have a sprite appear above the player character for interactables
+
+8/13/2022
+Changes:
+Changed how enemies movement works from a point system to an axis system, so that in the future I can add an enemy that could move in 4 directions and have the sprite change accordingly
+Updated the enemies to use the new sprite system
+scr_get_face now requires an argument of a direction, this for it to work with the new axis system
+Created a new sprite and object for an enemy that uses a projectile
+Added a new constant to work with movement: IDLE
+Gave obj_enemy_test an idle sprite
+Added the new enemy to the test room
+
+Known Bugs:
+Still need to set up the sprint sprite for the cbt
+There is still no timer for interacting with the sign in the second room
+
+To Do:
+Have the player press up to enter doorways instead of collision
+Have a sprite appear above the player character for interactables
+Start adding test sounds
+Start thinking about how to handle inventory
+Have the walking gun actually shoot

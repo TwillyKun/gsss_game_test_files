@@ -12,8 +12,9 @@ if (instance_exists(obj_cbt)) {
     //If the distance is less than the enemy's sightline, enter Chase state
     if (dis < sight) {
         state = scr_enemy_chase_state;
-        targetx = obj_cbt.x;
-        targety = obj_cbt.y;
+        var dir = point_direction(x, y, obj_cbt.x, obj_cbt.y);
+        xaxis = lengthdir_x(1, dir);
+        yaxis = lengthdir_y(1, dir);
     //If the distance is greater than the enemy's sightline, choose a random state
     } else {
         scr_enemy_choose_next_state();

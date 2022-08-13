@@ -40,7 +40,9 @@
       <sprite>sprites\spr_idle_left</sprite>
     </sprites>
     <sprites name="Enemy Sprites">
-      <sprite>sprites\spr_enemy_test</sprite>
+      <sprite>sprites\spr_enemy_test_move</sprite>
+      <sprite>sprites\spr_enemy_test_idle</sprite>
+      <sprite>sprites\spr_enemy_2</sprite>
     </sprites>
     <sprites name="Shared Sprites">
       <sprite>sprites\spr_damage</sprite>
@@ -111,6 +113,7 @@
       </objects>
       <objects name="Enemy">
         <object>objects\obj_enemy_test</object>
+        <object>objects\obj_enemy_gun</object>
       </objects>
       <objects name="Items">
         <object>objects\obj_expr</object>

@@ -100,7 +100,7 @@ if (obj_input.xaxis == 0 and obj_input.yaxis == 0) {
     } else {
         len = spd*2;
     }
-    scr_get_face();
+    scr_get_face(dir);
 }
 
 // Calculate the horizontal and verticle speeds of the character
